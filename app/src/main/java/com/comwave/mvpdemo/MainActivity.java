@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements IShowView, View.O
         initView();
     }
 
+    //初始化
     private void initView() {
         textShow = findViewById(R.id.textShow);
         Button btnToast = findViewById(R.id.btnToast);
