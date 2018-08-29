@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements IShowView, View.O
         initView();
     }
 
-    //初始化
     private void initView() {
         textShow = findViewById(R.id.textShow);
         Button btnToast = findViewById(R.id.btnToast);
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements IShowView, View.O
 
         iPresenter = new PresenterComl(this);
     }
+
 
     @Override
     public void show(String str) {
@@ -50,5 +50,11 @@ public class MainActivity extends AppCompatActivity implements IShowView, View.O
             iPresenter.showToast();
         }
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "OnDestroy()", Toast.LENGTH_SHORT).show();
     }
 }
