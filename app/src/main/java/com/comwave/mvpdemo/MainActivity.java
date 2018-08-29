@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity implements IShowView, View.O
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "OnPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(this, "OnDestroy()", Toast.LENGTH_SHORT).show();
